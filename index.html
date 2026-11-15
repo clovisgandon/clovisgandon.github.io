@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clovis Gandon · Étudiant en génie civil à La Rochelle · Revit, BIM, chantier</title>
+  <meta name="description" content="Clovis Gandon, étudiant en BUT Génie Civil Construction Durable à La Rochelle. Modélisation BIM sur Revit, expérience de chantier en gros œuvre, orientation bureau d'études.">
+  <meta name="author" content="Clovis Gandon">
+  <meta name="theme-color" content="#F7F8F5">
+
+  <!-- Aperçu LinkedIn / réseaux sociaux (Open Graph).
+       Après la mise en ligne, remplace og:url et og:image par des adresses complètes
+       (ex. https://clovis-gandon.github.io/assets/img/og-image.jpg). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Clovis Gandon · Étudiant en génie civil">
+  <meta property="og:description" content="Je fais le lien entre la conception et le chantier. BUT Génie Civil Construction Durable, La Rochelle.">
+  <meta property="og:image" content="https://clovisgandon.github.io/assets/img/accueil-chantier.jpg">
+  <meta property="og:url" content="https://clovisgandon.github.io/">
+  <link rel="canonical" href="https://clovisgandon.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2324564A'/%3E%3Cpath d='M14 50V30L32 16l18 14v20' fill='none' stroke='%23F7F8F5' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M10 50h44' stroke='%23D9A441' stroke-width='4'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Clovis Gandon",
+    "jobTitle": "Étudiant en BUT Génie Civil Construction Durable",
+    "email": "mailto:clovisgandon1202@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "La Rochelle", "addressCountry": "FR" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "IUT de La Rochelle" },
+    "knowsAbout": ["Revit", "BIM", "AutoCAD", "SketchUp", "Génie civil", "Construction durable", "Gros œuvre"],
+    "sameAs": ["https://www.linkedin.com/in/clovis-gandon-06346b307"]
+  }
+  </script>
+
+  <script>
+    document.documentElement.classList.add('js');
+    if (/[?&]anim=1/.test(location.search)) document.documentElement.classList.add('force-anim');
+  </script>
+
+  <style>
+    /* =========================================================
+       PALETTE (6 couleurs, chacune a un rôle)
+       papier : fond · chaux : fond alterné · encre : texte
+       béton : texte secondaire · sapin : couleur principale
+       ocre : signal chantier, utilisé avec parcimonie
+       ========================================================= */
+    :root {
+      --papier: #F7F8F5;
+      --chaux: #ECEFEA;
+      --encre: #1C2622;
+      --beton: #56625C;
+      --sapin: #24564A;
+      --sapin-fonce: #1A4038;
+      --ocre: #D9A441;
+      --trait: #CCD3CD;
+
+      --f-titre: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
+      --f-texte: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+      --gut: clamp(16px, 4vw, 48px);
+      --max: 1160px;
+      --header: 64px;
+      --ease: cubic-bezier(.65, 0, .35, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: calc(var(--header) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--papier);
+      color: var(--encre);
+      font: 400 1.0625rem/1.65 var(--f-texte);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { font-family: var(--f-titre); line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.012em; font-weight: 650; }
+    p { margin: 0 0 1em; }
+    a { color: var(--sapin); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--sapin-fonce); text-decoration-thickness: 2px; }
+    button { font: inherit; color: inherit; }
+    :focus-visible { outline: 2px solid var(--sapin); outline-offset: 3px; border-radius: 2px; }
+    abbr[title], .gloss { text-decoration: none; border-bottom: 1px dotted var(--beton); cursor: help; }
+    sup { line-height: 0; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gut); }
+    .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--encre); color: var(--papier); padding: 10px 14px; font-family: var(--f-titre); }
+    .skip:focus { top: 12px; }
+
+    /* ---------- Barre de lecture ---------- */
+    .progress { position: fixed; inset: 0 0 auto 0; height: 2px; background: var(--sapin); transform: scaleX(0); transform-origin: 0 50%; z-index: 60; }
+
+    /* ---------- En-tête ---------- */
+    .site-header { position: sticky; top: 0; z-index: 50; background: var(--papier); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .site-header.is-scrolled { border-bottom-color: var(--trait); }
+    .header-in { height: var(--header); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--f-titre); font-weight: 700; font-size: 1.05rem; color: var(--encre); text-decoration: none; letter-spacing: -.01em; }
+    .brand small { font-weight: 450; color: var(--beton); font-size: .9rem; margin-left: 8px; }
+    .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+    .nav a { position: relative; font-family: var(--f-titre); font-weight: 500; font-size: .93rem; color: var(--beton); text-decoration: none; padding: 6px 0; }
+    .nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--sapin); transform: scaleX(0); transform-origin: 0 50%; transition: transform .35s var(--ease); }
+    .nav a:hover, .nav a.is-active { color: var(--encre); }
+    .nav a.is-active::after { transform: scaleX(1); }
+    .burger { display: none; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; padding: 0; position: relative; }
+    .burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: var(--encre); transition: transform .3s var(--ease), opacity .2s; }
+    .burger span:nth-child(1) { top: 16px; } .burger span:nth-child(2) { top: 22px; } .burger span:nth-child(3) { top: 28px; }
+    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    @media (max-width: 1023px) {
+      .burger { display: block; margin-right: -10px; }
+      .brand small { display: none; }
+      .nav { position: absolute; top: var(--header); left: 0; right: 0; background: var(--papier); border-bottom: 1px solid var(--trait); display: none; }
+      .nav.is-open { display: block; }
+      .nav ul { flex-direction: column; gap: 0; padding: 8px var(--gut) 20px; }
+      .nav a { display: block; font-size: 1.15rem; padding: 12px 0; border-bottom: 1px solid var(--chaux); }
+      .nav a::after { display: none; }
+      .nav a.is-active { color: var(--sapin); }
+    }
+
+    /* ---------- Accueil ---------- */
+    .hero { padding: clamp(36px, 7vw, 88px) 0 clamp(40px, 6vw, 72px); }
+    .hero-grid { display: grid; gap: 40px; align-items: center; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 56px; } }
+    h1 { font-size: clamp(2.7rem, 8vw, 5.2rem); font-weight: 750; letter-spacing: -.035em; line-height: .98; margin-bottom: 14px; }
+    .role { font-family: var(--f-titre); font-weight: 550; color: var(--sapin); font-size: 1.05rem; margin-bottom: 28px; }
+    .lead { font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.32; max-width: 26ch; margin-bottom: 18px; }
+    .chapo { color: var(--beton); max-width: 48ch; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-titre); font-weight: 600; font-size: .98rem; text-decoration: none; border-radius: 3px; padding: 13px 20px; background: var(--sapin); color: var(--papier); transition: background .2s; }
+    .btn:hover { background: var(--sapin-fonce); color: var(--papier); text-decoration: none; }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .link-strong { font-family: var(--f-titre); font-weight: 600; font-size: .98rem; color: var(--encre); }
+    .link-strong:hover { color: var(--sapin); }
+
+    /* Accueil : la maquette et le chantier, côte à côte */
+    .duo { position: relative; margin: 0; width: 100%; max-width: 560px; justify-self: end; aspect-ratio: 1 / 1.08; }
+    .duo figure { margin: 0; position: absolute; overflow: hidden; background: var(--chaux); }
+    .duo img { width: 100%; height: 100%; object-fit: cover; }
+    .duo .photo { top: 0; right: 0; width: 70%; height: 86%; }
+    .duo .maquette { left: 0; bottom: 0; width: 64%; aspect-ratio: 1066 / 738; border: 6px solid var(--papier); }
+    .duo .maquette img { object-fit: cover; object-position: 30% 50%; }
+    .duo figcaption { position: absolute; left: 0; font-family: var(--f-titre); font-size: .78rem; font-weight: 550; background: var(--papier); color: var(--encre); padding: 4px 9px; }
+    .duo .photo figcaption { top: 0; }
+    .duo .maquette figcaption { bottom: 0; }
+    .duo figcaption b { color: var(--sapin); font-weight: 650; }
+    .js .duo .photo { clip-path: inset(0 0 100% 0); animation: devoile 1.1s var(--ease) .15s forwards; }
+    .js .duo .maquette { opacity: 0; transform: translateY(28px); animation: monte .9s var(--ease) .75s forwards; }
+    @keyframes devoile { to { clip-path: inset(0 0 0 0); } }
+    @keyframes monte { to { opacity: 1; transform: none; } }
+
+    /* Cartouche (comme sur un plan) */
+    .cartouche { margin: clamp(40px, 6vw, 64px) 0 0; border: 1.5px solid var(--encre); display: grid; grid-template-columns: repeat(2, 1fr); font-family: var(--f-titre); }
+    .cartouche div { padding: 12px 14px; border-right: 1px solid var(--trait); border-bottom: 1px solid var(--trait); min-width: 0; }
+    .cartouche dt { font-size: .76rem; color: var(--beton); margin-bottom: 2px; }
+    .cartouche dd { margin: 0; font-weight: 550; font-size: .98rem; line-height: 1.3; }
+    .cartouche div:nth-child(2n) { border-right: 0; }
+    .cartouche div:nth-last-child(-n+2) { border-bottom: 0; }
+    @media (min-width: 640px) {
+      .cartouche { grid-template-columns: repeat(3, 1fr); }
+      .cartouche div:nth-child(2n) { border-right: 1px solid var(--trait); }
+      .cartouche div:nth-child(3n) { border-right: 0; }
+      .cartouche div:nth-last-child(-n+2) { border-bottom: 1px solid var(--trait); }
+      .cartouche div:nth-last-child(-n+3) { border-bottom: 0; }
+    }
+    @media (min-width: 1040px) {
+      .cartouche { grid-template-columns: 1.25fr 1.45fr 1.3fr 1fr .8fr .8fr; }
+      .cartouche div, .cartouche div:nth-child(2n), .cartouche div:nth-child(3n) { border-right: 1px solid var(--trait); border-bottom: 0; }
+      .cartouche div:last-child { border-right: 0; }
+    }
+
+    /* ---------- Sections ---------- */
+    .sec { padding: clamp(64px, 10vw, 120px) 0; border-top: 1px solid var(--trait); }
+    .sec.alt { background: var(--chaux); border-top-color: transparent; }
+    .sec-grid { display: grid; gap: 28px; }
+    @media (min-width: 960px) {
+      .sec-grid { grid-template-columns: 260px 1fr; gap: 64px; }
+      .sec-head { position: sticky; top: calc(var(--header) + 40px); align-self: start; }
+    }
+    h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 700; letter-spacing: -.025em; }
+    .sec-head p { color: var(--beton); font-size: 1rem; max-width: 34ch; margin-top: 14px; }
+    h3 { font-size: 1.3rem; }
+    .muted { color: var(--beton); }
+
+    /* À propos */
+    .apropos { display: grid; gap: 32px; }
+    @media (min-width: 720px) { .apropos { grid-template-columns: 1fr 210px; gap: 48px; } }
+    .apropos .texte { max-width: 60ch; }
+    .apropos .texte p:first-child { font-size: 1.3rem; line-height: 1.4; }
+    .portrait { width: 100%; max-width: 210px; aspect-ratio: 1; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+    /* Emplacement image (à remplacer) */
+    .ph { width: 100%; height: 100%; min-height: 120px; display: grid; place-items: center; text-align: center; padding: 16px; background-color: var(--chaux);
+      background-image: repeating-linear-gradient(135deg, transparent 0 11px, rgba(86, 98, 92, .13) 11px 12px); border: 1px solid var(--trait); color: var(--beton); font-family: var(--f-titre); }
+    .alt .ph { background-color: var(--papier); }
+    .ph strong { display: block; font-size: .82rem; font-weight: 600; color: var(--encre); }
+    .ph small { display: block; font-size: .74rem; margin-top: 4px; overflow-wrap: anywhere; }
+
+    /* Parcours */
+    .chiffres { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 0; margin: 0 0 56px; }
+    .chiffres div { padding: 0 18px; border-left: 1px solid var(--trait); }
+    .chiffres dt { font-family: var(--f-titre); font-weight: 650; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--sapin); line-height: 1; margin-bottom: 8px; letter-spacing: -.02em; }
+    .chiffres dd { margin: 0; font-size: .95rem; color: var(--beton); line-height: 1.4; }
+    @media (min-width: 760px) { .chiffres { grid-template-columns: repeat(4, 1fr); } }
+    .rangs > * { display: grid; gap: 6px 32px; padding: 28px 0; border-top: 1px solid var(--trait); }
+    .rangs > *:last-child { border-bottom: 1px solid var(--trait); }
+    @media (min-width: 680px) { .rangs > * { grid-template-columns: 150px 1fr; } }
+    .quand { font-family: var(--f-titre); font-size: .9rem; color: var(--beton); padding-top: 4px; }
+    .ou { font-style: italic; color: var(--beton); margin-bottom: 12px; }
+    .liste { margin: 0; padding: 0; list-style: none; }
+    .liste li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+    .liste li::before { content: ''; position: absolute; left: 0; top: .8em; width: 10px; height: 1px; background: var(--sapin); }
+
+    /* Expériences : chronologie qui se remplit */
+    .timeline { --x: 5px; list-style: none; margin: 0; padding: 0; position: relative; }
+    .timeline::before, .timeline::after { content: ''; position: absolute; top: 6px; bottom: 6px; left: var(--x); width: 1px; background: var(--trait); }
+    .timeline::after { background: var(--sapin); width: 2px; margin-left: -.5px; transform: scaleY(var(--p, 0)); transform-origin: 50% 0; }
+    .tl-item { position: relative; padding: 0 0 48px 32px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before { content: ''; position: absolute; left: calc(var(--x) - 5px); top: 7px; width: 9px; height: 9px; border: 1.5px solid var(--sapin); background: var(--papier); border-radius: 50%; z-index: 1; transition: background .4s; }
+    .tl-item.is-in::before { background: var(--sapin); }
+    .tl-date { font-family: var(--f-titre); font-size: .9rem; color: var(--beton); margin-bottom: 6px; }
+    .tl-where { font-style: italic; color: var(--beton); margin-bottom: 14px; }
+    .tl-item h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-bottom: 4px; }
+    .tag { font-family: var(--f-titre); font-size: .72rem; font-weight: 550; color: var(--beton); border: 1px solid var(--trait); border-radius: 2px; padding: 1px 6px; letter-spacing: .01em; }
+    .tl-item p { max-width: 62ch; }
+    .tl-item.compact p:not(.tl-date):not(.tl-where) { font-size: 1rem; color: var(--beton); }
+    .learn { margin: 0; max-width: 62ch; }
+    .learn em { font-style: normal; font-family: var(--f-titre); font-weight: 600; font-size: .92rem; background: linear-gradient(transparent 58%, rgba(217, 164, 65, .45) 58%); padding: 0 2px; margin-right: 6px; }
+    @media (min-width: 760px) {
+      .timeline { --x: 175px; }
+      .tl-item { display: grid; grid-template-columns: 145px 1fr; gap: 0 60px; padding-left: 0; }
+      .tl-item > * { grid-column: 2; }
+      .tl-item > .tl-date { grid-column: 1; grid-row: 1 / span 9; text-align: right; padding-top: 2px; }
+    }
+
+    /* Projets */
+    .projets { display: grid; gap: clamp(56px, 8vw, 96px); }
+    .projet { display: grid; gap: 22px; align-items: center; }
+    @media (min-width: 860px) {
+      .projet { grid-template-columns: 1.3fr 1fr; gap: 48px; }
+      .projet:nth-child(even) .proj-fig { order: 2; }
+    }
+    .proj-fig { display: block; width: 100%; aspect-ratio: 4 / 3; padding: 0; border: 0; background: var(--chaux); cursor: pointer; overflow: hidden; position: relative; }
+    .proj-fig img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .proj-fig:hover img { transform: scale(1.03); }
+    .proj-fig.plan { background: #fff; border: 1px solid var(--trait); }
+    .proj-fig.plan img { object-fit: contain; }
+    .js .proj-fig { clip-path: inset(0 100% 0 0); transition: clip-path 1.1s var(--ease); }
+    .js .proj-fig.is-in { clip-path: inset(0 0 0 0); }
+    .proj-meta { font-family: var(--f-titre); font-size: .88rem; color: var(--beton); margin-bottom: 8px; }
+    .proj-meta b { color: var(--sapin); font-weight: 600; }
+    .projet h3 { font-size: clamp(1.4rem, 2.4vw, 1.75rem); }
+    .btn-link { background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--f-titre); font-weight: 600; font-size: .98rem; color: var(--sapin); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    .btn-link:hover { text-decoration-thickness: 2px; color: var(--sapin-fonce); }
+
+    /* Compétences */
+    .comp { display: grid; gap: 40px 56px; }
+    @media (min-width: 760px) { .comp { grid-template-columns: 1fr 1fr; } }
+    .comp h3 { font-size: 1rem; color: var(--sapin); font-weight: 650; margin-bottom: 8px; }
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .rows li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 11px 0; border-bottom: 1px solid var(--trait); }
+    .rows .nom { font-family: var(--f-titre); font-weight: 550; }
+    .rows .niv { color: var(--beton); font-style: italic; font-size: .98rem; }
+    .comp .note { font-size: .95rem; color: var(--beton); margin-top: 12px; }
+
+    /* Blog */
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .filter { font-family: var(--f-titre); font-size: .9rem; font-weight: 500; padding: 6px 12px; border: 1px solid var(--trait); border-radius: 3px; background: transparent; cursor: pointer; color: var(--beton); transition: background .2s, color .2s, border-color .2s; }
+    .filter:hover { border-color: var(--encre); color: var(--encre); }
+    .filter[aria-pressed="true"] { background: var(--encre); border-color: var(--encre); color: var(--papier); }
+    .post { display: grid; gap: 6px 32px; padding: 26px 0; border-top: 1px solid var(--trait); }
+    .post:last-child { border-bottom: 1px solid var(--trait); }
+    @media (min-width: 760px) { .post { grid-template-columns: 130px 1fr; } .post .hashtags { grid-column: 2; } }
+    .post-meta { font-family: var(--f-titre); font-size: .86rem; color: var(--beton); display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+    @media (max-width: 759px) { .post-meta { flex-direction: row; gap: 10px; } }
+    .post h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .post h3 a { color: var(--encre); text-decoration: none; background: linear-gradient(var(--sapin), var(--sapin)) 0 100% / 0 1.5px no-repeat; transition: background-size .45s var(--ease); }
+    .post h3 a:hover { background-size: 100% 1.5px; color: var(--encre); }
+    .excerpt { color: var(--beton); margin-bottom: 10px; max-width: 60ch; }
+    .hashtags { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    .hashtag { background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--f-titre); font-size: .86rem; color: var(--sapin); }
+    .hashtag:hover { text-decoration: underline; }
+    .empty { padding: 24px 0; border-top: 1px solid var(--trait); }
+
+    /* Passions */
+    .passions { display: grid; gap: 40px; }
+    @media (min-width: 760px) { .passions { grid-template-columns: repeat(2, 1fr); gap: 48px 40px; } }
+    @media (min-width: 1040px) { .passions { grid-template-columns: repeat(4, 1fr); } }
+    .passion .trait { font-style: italic; color: var(--sapin); margin: 14px 0 2px; }
+    .passion h3 { font-size: 1.2rem; }
+    .passion p:last-child { font-size: 1rem; }
+    .passion-img { display: grid; gap: 6px; grid-template-columns: 2fr 1fr; aspect-ratio: 4 / 3.4; }
+    .passion-img.solo { grid-template-columns: 1fr; }
+    .passion-img button { padding: 0; border: 0; background: var(--chaux); cursor: zoom-in; overflow: hidden; min-height: 0; }
+    .passion-img button:first-child { grid-row: span 2; }
+    .passion-img.solo button:first-child { grid-row: auto; }
+    .passion-img button:nth-child(2):last-child { grid-row: span 2; }
+    .passion-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .passion-img button:hover img { transform: scale(1.04); }
+    .passion-img button { position: relative; }
+    .passion-img .plus { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(28, 38, 34, .55); color: var(--papier); font-family: var(--f-titre); font-weight: 700; font-size: 1.3rem; }
+    .passion-txt { aspect-ratio: 4 / 3.4; background: var(--chaux); display: grid; place-items: center; text-align: center; padding: 20px; font-family: var(--f-titre); color: var(--sapin); }
+    .passion-txt span { display: block; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; }
+    .passion-txt small { display: block; margin-top: 10px; color: var(--beton); font-size: .9rem; }
+
+    /* Grilles de photos et de planches (cliquables) */
+    .planche { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width: 700px) { .planche { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+    .planche button { display: block; padding: 0; border: 0; background: none; text-align: left; cursor: zoom-in; color: inherit; }
+    .planche .vign { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--chaux); border: 1px solid var(--trait); }
+    .alt .planche .vign { background: var(--papier); }
+    .planche img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .planche .plan img { object-fit: contain; background: #fff; }
+    .planche button:hover img { transform: scale(1.04); }
+    .planche .leg { display: block; font-family: var(--f-titre); font-size: .84rem; line-height: 1.35; color: var(--beton); margin-top: 7px; }
+    .bloc-sup { margin-top: clamp(56px, 8vw, 88px); }
+    .bloc-sup h3 { font-size: 1.35rem; margin-bottom: 6px; }
+    .bloc-sup > p { color: var(--beton); max-width: 60ch; margin-bottom: 22px; }
+    .tl-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 4px 0 16px; max-width: 520px; }
+    .tl-photos.un { grid-template-columns: 1fr; max-width: 420px; }
+    .tl-photos button { padding: 0; border: 0; background: var(--chaux); cursor: zoom-in; aspect-ratio: 3 / 4; overflow: hidden; }
+    .tl-photos.un button { aspect-ratio: 4 / 3; }
+    .tl-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .tl-photos button:hover img { transform: scale(1.04); }
+    .points { list-style: none; margin: 0 0 16px; padding: 0; font-size: 1rem; }
+    .points li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+    .points li::before { content: ''; position: absolute; left: 0; top: .78em; width: 10px; height: 1px; background: var(--sapin); }
+
+    /* Contact */
+    .contact { background: var(--sapin); color: var(--papier); padding: clamp(72px, 11vw, 128px) 0; }
+    .contact h2 { color: var(--papier); }
+    .contact .intro { opacity: .85; max-width: 46ch; font-size: 1.1rem; }
+    .mail { display: inline-block; font-family: var(--f-titre); font-weight: 650; font-size: clamp(1.35rem, 4.6vw, 2.8rem); letter-spacing: -.02em; color: var(--papier); text-decoration: none; overflow-wrap: anywhere; margin: 18px 0 30px; border-bottom: 2px solid var(--ocre); padding-bottom: 4px; line-height: 1.2; }
+    .mail:hover { color: #fff; border-bottom-width: 3px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px 32px; list-style: none; margin: 0 0 40px; padding: 0; font-family: var(--f-titre); }
+    .contact-links a { color: var(--papier); font-weight: 550; }
+    .contact-links span { opacity: .7; }
+    .closing { opacity: .8; font-style: italic; max-width: 52ch; margin: 0; }
+
+    /* Pied de page */
+    .site-footer { padding: 28px 0 32px; font-family: var(--f-titre); font-size: .88rem; color: var(--beton); }
+    .footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-right: 56px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; }
+    .site-footer a { color: var(--beton); }
+    .site-footer a:hover { color: var(--encre); }
+
+    /* Retour en haut */
+    .to-top { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; display: grid; place-items: center; background: var(--papier); border: 1px solid var(--trait); border-radius: 3px; cursor: pointer; z-index: 40; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .3s, transform .3s var(--ease); }
+    .to-top svg { width: 18px; height: 18px; }
+    .to-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+    .to-top:hover { border-color: var(--encre); }
+
+    /* ---------- Fenêtres ---------- */
+    dialog { width: min(880px, calc(100% - 24px)); max-height: calc(100% - 32px); padding: 0; border: 1px solid var(--trait); border-radius: 4px; background: var(--papier); color: var(--encre); overflow: auto; }
+    dialog::backdrop { background: rgba(28, 38, 34, .6); }
+    .dlg-body { padding: clamp(22px, 4vw, 44px); }
+    .dlg-close { position: sticky; top: 10px; float: right; margin: 10px 10px 0 0; width: 40px; height: 40px; display: grid; place-items: center; background: var(--papier); border: 1px solid var(--trait); border-radius: 3px; cursor: pointer; z-index: 2; }
+    .dlg-close svg { width: 18px; height: 18px; }
+    .dlg-close:hover { border-color: var(--encre); }
+    .dlg-kicker { font-family: var(--f-titre); color: var(--sapin); font-weight: 600; font-size: .92rem; margin-bottom: 6px; }
+    dialog h3 { font-size: clamp(1.5rem, 3vw, 2rem); padding-right: 40px; }
+    .gallery-main { position: relative; aspect-ratio: 16 / 10; background: var(--chaux); margin-top: 18px; }
+    .gallery-main img { width: 100%; height: 100%; object-fit: contain; }
+    .gallery-main .ph { padding: 12px 60px; }
+    .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; display: grid; place-items: center; background: var(--papier); border: 1px solid var(--trait); border-radius: 3px; cursor: pointer; }
+    .gallery-nav svg { width: 18px; height: 18px; }
+    .gallery-nav.prev { left: 10px; } .gallery-nav.next { right: 10px; }
+    .gallery-caption, .cap { font-family: var(--f-titre); font-size: .86rem; color: var(--beton); margin-top: 8px; }
+    .thumbs { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .thumbs button { width: 84px; aspect-ratio: 4 / 3; padding: 0; border: 1px solid var(--trait); background: var(--chaux); cursor: pointer; overflow: hidden; }
+    .thumbs button[aria-current="true"] { outline: 2px solid var(--sapin); outline-offset: 1px; }
+    .thumbs .ph { min-height: 0; padding: 4px; } .thumbs .ph strong { font-size: .55rem; } .thumbs .ph small { display: none; }
+    .thumbs img { width: 100%; height: 100%; object-fit: cover; }
+    .article-body { max-width: 66ch; }
+    .article-body .post-meta { flex-direction: row; gap: 10px; margin-bottom: 8px; }
+    .article-hero { aspect-ratio: 16 / 7; margin-top: 16px; background: var(--chaux); }
+    .article-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .article-body h4 { font-size: 1.15rem; margin-top: 1.8em; }
+    .article-body figure { margin: 0 0 24px; }
+    .article-body .hashtags { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--trait); }
+    .todo { font-family: var(--f-titre); font-size: .86rem; background: rgba(217, 164, 65, .28); padding: 1px 5px; border-radius: 2px; }
+
+    /* ---------- Mouvement réduit ---------- */
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    @media (prefers-reduced-motion: reduce) {
+      :root:not(.force-anim) .duo .photo, :root:not(.force-anim) .duo .maquette { animation: none; clip-path: none; opacity: 1; transform: none; }
+      :root:not(.force-anim) .proj-fig { clip-path: none; transition: none; }
+      :root:not(.force-anim) *, :root:not(.force-anim) *::before, :root:not(.force-anim) *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ================= EN-TÊTE ================= -->
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="#accroche">Clovis Gandon<small>génie civil</small></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#a-propos">Profil</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#experiences">Expériences</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#passions">Passions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- ================= 1. ACCROCHE ================= -->
+    <section class="hero" id="accroche" aria-labelledby="titre-principal">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1 id="titre-principal">Clovis Gandon</h1>
+            <p class="role">Étudiant en BUT Génie Civil Construction Durable</p>
+            <p class="lead">Je fais le lien entre la conception d'un bâtiment et la réalité du chantier.</p>
+            <p class="chapo">En 2<sup>e</sup> année à l'IUT de La Rochelle, je modélise des bâtiments sur Revit et j'ai travaillé sur un chantier de gros œuvre. Je m'oriente vers les bureaux d'études.</p>
+            <div class="actions">
+              <a class="btn" href="assets/cv/CV_Clovis_Gandon.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+                Télécharger mon CV
+              </a>
+              <a class="link-strong" href="mailto:clovisgandon1202@gmail.com">M'écrire un mail</a>
+            </div>
+          </div>
+
+          <!-- La conception (maquette Revit) et la réalité (chantier) -->
+          <div class="duo">
+            <figure class="photo">
+              <img src="assets/img/accueil-chantier.jpg" alt="Chantier du futur conservatoire de La Rochelle : grue à tour et fondations devant l'ancienne caserne en pierre" width="854" height="1139" fetchpriority="high">
+              <figcaption><b>Réalité</b> · chantier du conservatoire</figcaption>
+            </figure>
+            <figure class="maquette">
+              <img src="assets/img/projets/revit-batiment.jpg" alt="Maquette Revit du projet L'Escale à Puilboreau : bâtiment R+2 avec coursives et toitures-terrasses" width="1066" height="738">
+              <figcaption><b>Conception</b> · maquette Revit, L'Escale</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Cartouche : l'encadré d'informations qu'on trouve en bas d'un plan -->
+        <dl class="cartouche">
+          <div><dt>Étudiant</dt><dd>Clovis Gandon, 19 ans</dd></div>
+          <div><dt>Formation</dt><dd>BUT Génie Civil, 2<sup>e</sup> année</dd></div>
+          <div><dt>Établissement</dt><dd>IUT de La Rochelle</dd></div>
+          <div><dt>Lieu</dt><dd>La Rochelle (17)</dd></div>
+          <div><dt>Mobilité</dt><dd>Permis B</dd></div>
+          <div><dt>Réseau</dt><dd><a href="https://www.linkedin.com/in/clovis-gandon-06346b307" target="_blank" rel="noopener">LinkedIn</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= 2. À PROPOS ================= -->
+    <section class="sec" id="a-propos" aria-labelledby="t-apropos">
+      <div class="wrap sec-grid">
+        <div class="sec-head">
+          <h2 id="t-apropos">Le bâtiment, depuis toujours</h2>
+        </div>
+        <div class="apropos">
+          <div class="texte">
+            <p>Le bâtiment et la construction me passionnent depuis toujours.</p>
+            <p>Plus jeune, c'est l'architecture qui m'attirait : les formes, les façades, les grands bâtiments. Avec le temps, je me suis intéressé à ce qu'il y a derrière : comment on conçoit un bâtiment, puis comment on le construit.</p>
+            <p>C'est ce chemin qui m'a mené au BUT Génie Civil Construction Durable, à La Rochelle. J'y apprends à concevoir des ouvrages solides, économes en énergie et réalistes à construire.</p>
+          </div>
+          <div class="portrait">
+            <!-- PHOTO DE PROFIL : quand tu as la photo, remplace la ligne <div class="ph">…</div> par :
+                 <img src="assets/img/profil.jpg" alt="Portrait de Clovis Gandon" width="420" height="420" loading="lazy"> -->
+            <img src="assets/img/profil.jpg" alt="Portrait de Clovis Gandon" width="720" height="720" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. PARCOURS ================= -->
+    <section class="sec alt" id="parcours" aria-labelledby="t-parcours">
+      <div class="wrap sec-grid">
+        <div class="sec-head">
+          <h2 id="t-parcours">Une formation du calcul au chantier</h2>
+          <p>Mon BUT couvre tout le cycle d'un bâtiment : concevoir, calculer, organiser et construire.</p>
+        </div>
+        <div>
+          <dl class="chiffres">
+            <div><dt>4</dt><dd>semaines de stage en gros œuvre</dd></div>
+            <div><dt>10</dt><dd>projets modélisés sur Revit</dd></div>
+            <div><dt>3 à 4</dt><dd>ans de pratique de la CAO</dd></div>
+            <div><dt>4</dt><dd>ans de relation client en magasin</dd></div>
+          </dl>
+          <div class="rangs">
+            <article>
+              <p class="quand">2025 – en cours</p>
+              <div>
+                <h3>BUT Génie Civil Construction Durable</h3>
+                <p class="ou">IUT de La Rochelle · 2<sup>e</sup> année</p>
+                <ul class="liste">
+                  <li><strong>Calcul de structures</strong> : vérifier qu'un ouvrage en béton armé, en bois ou en métal tient.</li>
+                  <li><strong>Topographie et implantation</strong> : placer précisément un bâtiment sur son terrain.</li>
+                  <li><strong>Modélisation <abbr title="Building Information Modeling : maquette numérique qui contient la géométrie et les informations du bâtiment">BIM</abbr></strong> sur Revit et dessin sur AutoCAD.</li>
+                  <li><strong>Réglementation thermique et environnementale</strong> : construire en consommant moins.</li>
+                  <li><strong>Gestion de projet</strong> et économie de la construction.</li>
+                </ul>
+              </div>
+            </article>
+            <article>
+              <p class="quand">2025</p>
+              <div>
+                <h3>Bac STI2D, option Architecture et Construction</h3>
+                <p class="ou">Baccalauréat technologique</p>
+                <ul class="liste">
+                  <li>Bases de la conception architecturale et du dessin technique.</li>
+                  <li>Introduction aux matériaux et aux systèmes constructifs.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="bloc-sup">
+            <h3>Visite du chantier du futur conservatoire</h3>
+            <p>À La Rochelle, l'ancienne caserne Chasseloup-Laubat est réhabilitée pour accueillir le conservatoire de musique et de danse. J'ai visité ce chantier pour mon projet tutoré (PTUT) de 2<sup>e</sup> année.</p>
+            <div class="planche" data-galerie="terrain"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. EXPÉRIENCES ================= -->
+    <section class="sec" id="experiences" aria-labelledby="t-exp">
+      <div class="wrap sec-grid">
+        <div class="sec-head">
+          <h2 id="t-exp">Ce que le terrain m'a appris</h2>
+          <p>Pour chaque expérience : ce que j'ai fait, et ce que cela m'apporte pour le bureau d'études.</p>
+        </div>
+        <ol class="timeline">
+          <li class="tl-item">
+            <p class="tl-date">Avril 2026<br>4 semaines</p>
+            <h3>Stage ouvrier en gros œuvre <span class="tag">BTP</span></h3>
+            <p class="tl-where">ADLI Construction, entreprise certifiée Qualibat · La Jarne (17)</p>
+            <p>J'ai réalisé des ouvrages en béton armé : des <span class="gloss" title="Poutres en béton armé, souvent enterrées, qui relient les fondations">longrines</span>, des <span class="gloss" title="Murs coulés dans de grands coffrages métalliques appelés banches">murs banchés</span> et des dalles. J'ai participé à chaque étape : ferraillage, coffrage, coulage, vibration et talochage.</p>
+            <p>J'ai aussi mené un petit projet en autonomie, du terrassement jusqu'au réglage des niveaux au laser rotatif, au millimètre près. Enfin, j'ai repéré une livraison non conforme d'un fournisseur et suivi sa résolution, jusqu'au recoulage.</p>
+            <div class="tl-photos" data-galerie="adli"></div>
+            <p class="learn"><em>En bureau d'études</em>Je sais ce qu'un plan doit dire à l'équipe qui construit : des cotes claires, un ferraillage réalisable et des tolérances réalistes.</p>
+          </li>
+          <li class="tl-item compact">
+            <p class="tl-date">2025<br>2 sessions de 5 jours</p>
+            <h3>Ouvrier événementiel</h3>
+            <p class="tl-where">Francofolies · La Rochelle</p>
+            <p>Monter et démonter les installations d'un grand festival m'a appris à travailler en équipe, à me coordonner avec les techniciens et à respecter les consignes de sécurité devant un large public.</p>
+          </li>
+          <li class="tl-item compact">
+            <p class="tl-date">2021 – 2025<br>week-ends et vacances</p>
+            <h3>Vendeur en prêt-à-porter</h3>
+            <p class="tl-where">La Station · La Rochelle</p>
+            <p>Quatre ans de relation client : écouter, conseiller, gérer la caisse. Ces réflexes servent aussi en bureau d'études, pour comprendre les besoins d'un client ou d'un architecte.</p>
+          </li>
+          <li class="tl-item">
+            <p class="tl-date">2024<br>2 semaines</p>
+            <h3>Ouvrier aménagement <span class="tag">BTP</span></h3>
+            <p class="tl-where">La Station · ouverture d'un nouveau magasin à Niort</p>
+            <p>J'ai monté le mobilier, agencé les rayons et installé la signalétique du magasin, avec une date d'ouverture impossible à décaler.</p>
+            <div class="tl-photos un" data-galerie="la-station"></div>
+            <p class="learn"><em>En bureau d'études</em>Voir un espace vide devenir un lieu fonctionnel, en tenant un délai fixe.</p>
+          </li>
+          <li class="tl-item">
+            <p class="tl-date">2022<br>stage de 3<sup>e</sup></p>
+            <h3>Stage découverte chez un constructeur <span class="tag">BTP</span></h3>
+            <p class="tl-where">Maison Alysia, constructeur de maisons individuelles · La Rochelle</p>
+            <p>J'ai d'abord observé comment les équipes travaillent ensemble, de la conception d'une maison au suivi de son chantier. J'ai ensuite réalisé mes propres plans avec leurs outils.</p>
+            <p class="learn"><em>En bureau d'études</em>Ma première approche de la démarche de conception, avec les outils de professionnels.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 5. PROJETS ================= -->
+    <section class="sec alt" id="projets" aria-labelledby="t-projets">
+      <div class="wrap">
+        <div class="sec-head" style="position:static;margin-bottom:clamp(36px,5vw,56px)">
+          <h2 id="t-projets">Projets</h2>
+          <p>Mes projets d'IUT : conception, VRD, installation de chantier et organisation.</p>
+        </div>
+        <div class="projets" id="projects-list"></div>
+
+        <div class="bloc-sup">
+          <h3>Plans, dessins et labo</h3>
+          <p>Dessin à la main, plans sur AutoCAD et essais au laboratoire.</p>
+          <div class="planche" data-galerie="dessins"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. COMPÉTENCES ================= -->
+    <section class="sec" id="competences" aria-labelledby="t-comp">
+      <div class="wrap sec-grid">
+        <div class="sec-head">
+          <h2 id="t-comp">Outils, chantier et savoir-être</h2>
+        </div>
+        <div class="comp">
+          <div>
+            <h3>Logiciels</h3>
+            <ul class="rows">
+              <li><span class="nom">Revit</span><span class="niv">avancé, 3 à 4 ans</span></li>
+              <li><span class="nom">AutoCAD</span><span class="niv">3 à 4 ans de pratique</span></li>
+              <li><span class="nom">SketchUp</span><span class="niv">3 à 4 ans de pratique</span></li>
+              <li><span class="nom">Excel</span><span class="niv">3 à 4 ans de pratique</span></li>
+            </ul>
+            <p class="note">Certification PIX : compétences numériques, reconnue par l'État.</p>
+          </div>
+          <div>
+            <h3>Sur le chantier</h3>
+            <ul class="rows">
+              <li><span class="nom">Lecture de plans d'exécution</span></li>
+              <li><span class="nom">Ferraillage, coffrage, coulage du béton armé</span></li>
+              <li><span class="nom">Implantation et réglage des niveaux au laser</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Langues</h3>
+            <ul class="rows">
+              <li><span class="nom">Français</span><span class="niv">langue maternelle</span></li>
+              <li><span class="nom">Anglais</span><span class="niv">A2, intermédiaire débutant</span></li>
+              <li><span class="nom">Chinois</span><span class="niv">notions, apprises au lycée</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Savoir-être</h3>
+            <ul class="rows">
+              <li><span class="nom">Rigueur et organisation</span></li>
+              <li><span class="nom">Autonomie</span></li>
+              <li><span class="nom">Esprit d'équipe</span></li>
+              <li><span class="nom">Adaptabilité sur le terrain</span></li>
+              <li><span class="nom">Sens du relationnel</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. BLOG ================= -->
+    <section class="sec alt" id="blog" aria-labelledby="t-blog">
+      <div class="wrap sec-grid">
+        <div class="sec-head">
+          <h2 id="t-blog">Carnet de chantier et de conception</h2>
+          <p>Ce que j'apprends en cours, sur Revit et sur le terrain.</p>
+        </div>
+        <div>
+          <div class="filters" role="group" aria-label="Filtrer les billets par thème" id="blog-filters"></div>
+          <div id="blog-list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. PASSIONS ================= -->
+    <section class="sec" id="passions" aria-labelledby="t-passions">
+      <div class="wrap">
+        <div class="sec-head" style="position:static;margin-bottom:clamp(32px,5vw,48px)">
+          <h2 id="t-passions">En dehors des cours</h2>
+        </div>
+        <div class="passions">
+          <article class="passion">
+            <div class="passion-img" data-galerie="montagne"></div>
+            <p class="trait">Le goût de l'effort</p>
+            <h3>Montagne et bivouac</h3>
+            <p>Randonnées dans les Pyrénées et dans le massif du Mont-Blanc, parfois avec une nuit sous la tente. On avance pas à pas, et la vue en haut récompense l'effort.</p>
+          </article>
+          <article class="passion">
+            <div class="passion-txt" aria-hidden="true"><div><span>6 ans<br>5 ans</span><small>de golf · de tennis</small></div></div>
+            <p class="trait">La persévérance</p>
+            <h3>Golf, tennis, musculation</h3>
+            <p>Six ans de golf et cinq ans de tennis, deux sports où l'on rate souvent avant de réussir. Aujourd'hui, la musculation, qui s'adapte à mon emploi du temps.</p>
+          </article>
+          <article class="passion">
+            <div class="passion-img" data-galerie="voyage"></div>
+            <p class="trait">La curiosité</p>
+            <h3>Voyage et architecture</h3>
+            <p>Les gratte-ciel des grandes villes américaines, les temples du Japon et sa culture si différente, The Shard à Londres. En voyage, je regarde d'abord les bâtiments.</p>
+          </article>
+          <article class="passion">
+            <div class="passion-img" data-galerie="la-rochelle"></div>
+            <p class="trait">L'attachement</p>
+            <h3>La Rochelle</h3>
+            <p>Ma ville : le Vieux-Port et ses tours, les carrelets sur la côte au coucher du soleil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. CONTACT ================= -->
+    <section class="contact" id="contact" aria-labelledby="t-contact">
+      <div class="wrap">
+        <h2 id="t-contact">Une question, un stage, un projet ?</h2>
+        <p class="intro">Je réponds par mail.</p>
+        <a class="mail" href="mailto:clovisgandon1202@gmail.com">clovisgandon1202@gmail.com</a>
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/clovis-gandon-06346b307" target="_blank" rel="noopener">Voir mon LinkedIn</a></li>
+          <li><a href="assets/cv/CV_Clovis_Gandon.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a></li>
+          <li><span>La Rochelle (17), permis B</span></li>
+        </ul>
+        <p class="closing">Merci d'avoir pris le temps de découvrir mon parcours. À bientôt, autour d'une maquette ou sur un chantier.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 10. PIED DE PAGE ================= -->
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <p style="margin:0">© <span id="year">2026</span> Clovis Gandon · Étudiant en génie civil à La Rochelle</p>
+      <ul>
+        <li><a href="mailto:clovisgandon1202@gmail.com">Mail</a></li>
+        <li><a href="https://www.linkedin.com/in/clovis-gandon-06346b307" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="assets/cv/CV_Clovis_Gandon.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Revenir en haut de la page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
+  </button>
+
+  <!-- Fenêtre projet -->
+  <dialog id="dlg-project" aria-labelledby="dlg-project-title">
+    <button class="dlg-close" type="button" data-close aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="dlg-body" id="dlg-project-body"></div>
+  </dialog>
+
+  <!-- Fenêtre billet -->
+  <dialog id="dlg-article" aria-labelledby="dlg-article-title">
+    <button class="dlg-close" type="button" data-close aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="dlg-body" id="dlg-article-body"></div>
+  </dialog>
+
+  <!-- =========================================================
+       CONTENU MODIFIABLE : PROJETS ET BILLETS DE BLOG
+       ========================================================= -->
+  <script>
+    /* ---------- PROJETS ----------
+       Pour chaque image :
+         src     : chemin du fichier ('' tant que la photo n'est pas fournie → un emplacement s'affiche)
+         attendu : nom de fichier à fournir (affiché dans l'emplacement)
+         legende : texte affiché sous l'image (et utilisé comme texte alternatif)
+         source  : à remplir si l'image n'est pas de toi
+       Le premier visuel de la liste sert de vignette. */
+    const PROJETS = [
+      {
+        titre: 'Étude d\'un lotissement',
+        logiciel: 'VRD',
+        contexte: 'SAÉ 2.2 et 2.6 · projet individuel · AutoCAD et Excel · juin 2026',
+        legende: 'Un lotissement de 16 lots autour d\'un espace vert avec bassin. J\'ai dessiné le plan de parcellisation et la coupe de la voirie, dimensionné le réseau d\'eaux pluviales, planifié et chiffré les travaux.',
+        points: [
+          'Réseaux en tranchée commune, selon la norme NF P 98-332',
+          'Eaux pluviales calculées par la méthode de Caquot : canalisation de 300 mm',
+          'Planning des travaux : 7 semaines',
+          'Déboursé sec de 133 991 €, prix de vente de 181 169 € HT'
+        ],
+        images: [
+          { src: 'assets/img/projets/lotissement-plan-lots.jpg', legende: 'Plan de parcellisation : 16 lots de 452 à 594 m²', plan: true },
+          { src: 'assets/img/projets/lotissement-parcelles.jpg', legende: 'Planche complète : parcellisation et réseaux, 14/06/2026', plan: true },
+          { src: 'assets/img/projets/lotissement-coupe-voirie.jpg', legende: 'Coupe transversale de la voirie et de la tranchée commune', plan: true },
+          { src: 'assets/img/projets/lotissement-diapo-3.jpg', legende: 'Implantation des réseaux en tranchée commune', plan: true },
+          { src: 'assets/img/projets/lotissement-diapo-4.jpg', legende: 'Réseau d\'eaux pluviales : méthode de Caquot', plan: true },
+          { src: 'assets/img/projets/lotissement-diapo-5.jpg', legende: 'Planning des travaux sur 7 semaines', plan: true }
+        ]
+      },
+      {
+        titre: 'Extension d\'un local de club de croquet',
+        logiciel: 'Ossature bois',
+        contexte: 'SAÉ 2.1 · BUT 1, 2026 · en binôme avec Axel Baty',
+        legende: 'Un local de 12 m² accolé à un bâtiment existant, avec point d\'eau et réserve, entièrement accessible aux personnes à mobilité réduite.',
+        points: [
+          'Mur à ossature bois : BA13, montants 45 × 145 mm, isolant PIR (R > 5), OSB et bardage vertical',
+          'Joint de rupture de 4 cm avec le bâtiment existant',
+          'Plan des réseaux : eau froide, eau chaude, eaux usées et électricité',
+          'Quantitatif complet, du terrassement aux équipements'
+        ],
+        images: [
+          { src: 'assets/img/projets/croquet-diapo-4.jpg', legende: 'Avant et après (photomontage) : le bâtiment existant et l\'extension en bardage bois', plan: true },
+          { src: 'assets/img/projets/croquet-diapo-5.jpg', legende: 'Composition du mur à ossature bois', plan: true },
+          { src: 'assets/img/projets/croquet-diapo-6.jpg', legende: 'Plan des réseaux du local', plan: true }
+        ]
+      },
+      {
+        titre: 'Installation de chantier : hauteur des grues',
+        logiciel: 'Installation de chantier',
+        contexte: 'Bâtiment R+7 sur un sous-sol · AutoCAD · octobre 2026',
+        legende: 'Choisir une grue à tour pour un bâtiment R+7, entre un immeuble R+9 existant et la grue d\'un chantier voisin, puis vérifier qu\'aucune flèche ne survole l\'autre.',
+        points: [
+          'Hauteur sous crochet dimensionnante : 44,24 m, imposée par la grue voisine',
+          'Grue retenue : MDT 162 H8 sur châssis, hauteur de 45 m',
+          'Contre-flèche de 16,50 m : ne survole ni le R+9 ni la grue voisine'
+        ],
+        images: [
+          { src: 'assets/img/projets/grues-elevation.jpg', legende: 'Élévation sud : vérification des hauteurs des grues, éch. 1/750', plan: true }
+        ]
+      },
+      {
+        titre: 'L\'Escale, à Puilboreau',
+        logiciel: 'Revit',
+        contexte: 'Modélisation BIM sur Revit',
+        legende: 'J\'ai modélisé sur Revit le projet L\'Escale, à Puilboreau : un bâtiment R+2 en deux volumes reliés par un passage couvert, avec des coursives en façade et des toitures-terrasses.',
+        points: [],
+        images: [
+          { src: 'assets/img/projets/revit-batiment.jpg', legende: 'Vue 3D de la maquette Revit de L\'Escale, à Puilboreau' }
+        ]
+      },
+      {
+        titre: 'Planifier un chantier en équipe',
+        logiciel: 'Organisation',
+        contexte: 'SAÉ 2.6 · juin 2026 · équipe de cinq',
+        legende: 'Un jeu de simulation de chantier où chacun tient un corps de métier. J\'étais l\'architecte. Nous avons construit deux maisons, avec deux façons de tenir le planning.',
+        points: [
+          'Maison 1 : planning tenu par l\'architecte seul, 13 jours de retard à la livraison',
+          'Maison 2 : chaque corps de métier pose lui-même son avancement, aucun retard',
+          'Ce que j\'en retiens : quand chacun met à jour le planning et que des points d\'étape sont fixés, les retards s\'anticipent ensemble'
+        ],
+        images: [
+          { src: 'assets/img/projets/lean-planning.jpg', legende: 'Planning de la maison A : prévu et réel, par corps de métier', plan: true }
+        ]
+      }
+    ];
+
+    /* ---------- GALERIES DE PHOTOS ----------
+       Chaque galerie s'affiche à l'endroit marqué data-galerie="nom" dans la page.
+       plan: true → l'image est affichée en entier (pour les plans), sans recadrage. */
+    const GALERIES = {
+      'adli': { titre: 'Stage chez ADLI Construction', images: [
+        { src: 'assets/img/chantier/adli-1.jpg', legende: 'Semelle filante ferraillée en fond de fouille' },
+        { src: 'assets/img/chantier/adli-2.jpg', legende: 'Semelle coulée' },
+        { src: 'assets/img/chantier/adli-3.jpg', legende: 'Mur en béton décoffré' }
+      ] },
+      'la-station': { titre: 'Aménagement du magasin de Niort', images: [
+        { src: 'assets/img/experiences/la-station-niort.jpg', legende: 'Le magasin de Niort pendant l\'aménagement, en 2024' }
+      ] },
+      'terrain': { titre: 'Chantier du futur conservatoire, La Rochelle', images: [
+        { src: 'assets/img/terrain/fondations-laser.jpg', legende: 'Fondations en cours, avec le laser de chantier en station' },
+        { src: 'assets/img/terrain/voute-terrassement.jpg', legende: 'Réhabilitation : voûte en pierre et terrassement' },
+        { src: 'assets/img/terrain/escalier-beton.jpg', legende: 'Escalier en béton, avant les finitions' },
+        { src: 'assets/img/terrain/poteau-poutres-bois.jpg', legende: 'Poteau béton et poutres bois, assemblés par une pièce métallique' },
+        { src: 'assets/img/terrain/verriere.jpg', legende: 'Passerelle sous une verrière métallique' },
+        { src: 'assets/img/terrain/grue-logements.jpg', legende: 'Voiles en béton et grue à tour' }
+      ] },
+      'dessins': { titre: 'Plans, dessins et labo', images: [
+        { src: 'assets/img/dessins/pile-coupe-main.jpg', legende: 'Coupe verticale d\'une pile, dessinée à la main au 1/50' },
+        { src: 'assets/img/dessins/coffrage-plancher.jpg', legende: 'Plan de coffrage d\'un plancher haut de rez-de-chaussée', plan: true },
+        { src: 'assets/img/dessins/escalier.jpg', legende: 'Plan d\'un escalier, détail au 1/50', plan: true },
+        { src: 'assets/img/dessins/plan-masse-autocad.jpg', legende: 'Plan de masse de l\'IUT et voies de circulation sur AutoCAD', plan: true },
+        { src: 'assets/img/dessins/facades-main.jpg', legende: 'Façades et toitures d\'une maison, dessinées à la planche' },
+        { src: 'assets/img/labo/beton-carotte.jpg', legende: 'Éprouvette en béton après l\'essai d\'écrasement' }
+      ] },
+      'montagne': { titre: 'Montagne et bivouac', images: [
+        { src: 'assets/img/passions/montagne-glacier.jpg', legende: 'Lever de soleil dans le massif du Mont-Blanc' },
+        { src: 'assets/img/passions/bivouac.jpg', legende: 'Bivouac en altitude' },
+        { src: 'assets/img/passions/sentier.jpg', legende: 'Sentier en balcon dans les Pyrénées' }
+      ] },
+      'voyage': { titre: 'Voyage et architecture', images: [
+        { src: 'assets/img/passions/londres-shard.jpg', legende: 'The Shard, à Londres' },
+        { src: 'assets/img/passions/londres-battersea.jpg', legende: 'Battersea Power Station et les immeubles neufs autour, à Londres' },
+        { src: 'assets/img/passions/aarhus-iceberg.jpg', legende: 'L\'Iceberg, à Aarhus (Danemark)' },
+        { src: 'assets/img/passions/londres-coal-drops-yard.jpg', legende: 'Coal Drops Yard, à King\'s Cross (Londres)' },
+        { src: 'assets/img/passions/londres-gasholders.jpg', legende: 'Les Gasholders de King\'s Cross : des logements dans d\'anciennes structures de gazomètres' },
+        { src: 'assets/img/passions/los-angeles.jpg', legende: 'Les tours du centre de Los Angeles' },
+        { src: 'assets/img/passions/etats-unis.jpg', legende: 'Dans le désert, aux environs de Las Vegas' }
+      ] },
+      'la-rochelle': { titre: 'La Rochelle', images: [
+        { src: 'assets/img/passions/carrelet.jpg', legende: 'Un carrelet au coucher du soleil' },
+        { src: 'assets/img/passions/vieux-port.jpg', legende: 'Le Vieux-Port et la tour Saint-Nicolas' }
+      ] }
+    };
+
+    /* ---------- BILLETS DE BLOG ----------
+       POUR AJOUTER UN BILLET : copie un bloc { ... }, colle-le en haut de la liste et modifie-le.
+         id       : identifiant unique, sans espace ni accent
+         titre    : titre du billet
+         date     : format AAAA-MM-JJ (le tri du plus récent au plus ancien est automatique)
+         image    : { src, attendu, legende }
+         tags     : parmi 'chantier', 'revit', 'construction-durable', 'bureau-d-etudes', 'architecture'
+         resume   : 1 à 2 phrases affichées sur la carte
+         contenu  : le texte complet en HTML (<p>, <h4>, <ul><li>…)
+       Le temps de lecture est calculé automatiquement.
+       Les passages entre crochets à compléter sont marqués avec <span class="todo">…</span>. */
+    const ARTICLES = [
+      {
+        id: 'stage-adli-gros-oeuvre',
+        titre: 'Mon stage en gros œuvre chez ADLI : ce que le chantier m\'a appris',
+        date: '2026-11-09',
+        image: { src: '', attendu: 'assets/img/blog/adli-couverture.jpg', legende: 'PHOTO CHANTIER ADLI (BILLET)' },
+        tags: ['chantier', 'bureau-d-etudes'],
+        resume: 'Quatre semaines à couler du béton armé, et ce que j\'en retiens pour le bureau d\'études.',
+        contenu: `
+          <p><strong>En avril 2026, j'ai passé quatre semaines comme stagiaire ouvrier chez ADLI Construction, une entreprise de gros œuvre de La Jarne, près de La Rochelle.</strong> Le gros œuvre, c'est tout ce qui fait tenir un bâtiment : fondations, murs porteurs, planchers. Voici ce que j'en retiens, et pourquoi c'est utile pour travailler en bureau d'études.</p>
+          <h4>Couler du béton armé, étape par étape</h4>
+          <p>Longrines, murs banchés, dalles : j'ai participé au ferraillage, au coffrage, au coulage, à la vibration et au talochage. <span class="todo">[À COMPLÉTER : une journée type, l'étape qui t'a le plus surpris.]</span></p>
+          <h4>Un petit projet mené en autonomie</h4>
+          <p>Terrassement, compactage, puis réglage des niveaux au laser rotatif, avec une précision au millimètre. <span class="todo">[À COMPLÉTER : de quel ouvrage s'agissait-il ? Quelle a été la difficulté ?]</span></p>
+          <h4>Gérer une non-conformité</h4>
+          <p>Une livraison d'un fournisseur ne correspondait pas à ce qui était prévu. <span class="todo">[À COMPLÉTER : ce qui s'est passé et comment l'équipe a réagi, jusqu'au recoulage.]</span></p>
+          <h4>Ce que je retiens pour le bureau d'études</h4>
+          <p><span class="todo">[À COMPLÉTER : 2 ou 3 leçons concrètes. Par exemple, ce qu'un plan doit absolument indiquer pour l'équipe sur place.]</span></p>
+        `
+      },
+      {
+        id: 'modeliser-maison-revit',
+        titre: 'Comment je modélise une maison sur Revit, étape par étape',
+        date: '2026-10-26',
+        image: { src: '', attendu: 'assets/img/blog/revit-couverture.jpg', legende: 'CAPTURE REVIT (BILLET)' },
+        tags: ['revit', 'bureau-d-etudes', 'architecture'],
+        resume: 'Niveaux, murs, dalles, menuiseries, toiture : ma méthode pour passer d\'une idée à une maquette complète.',
+        contenu: `
+          <p><strong>Revit est un logiciel de modélisation BIM : au lieu de dessiner des traits, on assemble des objets (murs, dalles, fenêtres) qui contiennent leurs propres informations.</strong> Les plans, les coupes et les vues 3D sortent tous de la même maquette. Voici ma méthode pour modéliser une maison.</p>
+          <h4>1. Préparer le projet : niveaux et quadrillage</h4>
+          <p>Les niveaux fixent la hauteur de chaque étage. Le quadrillage sert de repère pour placer les murs. <span class="todo">[À COMPLÉTER : ton gabarit de départ, tes réglages.]</span></p>
+          <h4>2. Les murs, puis les dalles</h4>
+          <p><span class="todo">[À COMPLÉTER : comment tu choisis les types de murs (composition, épaisseur).]</span></p>
+          <h4>3. Portes, fenêtres et escaliers</h4>
+          <p><span class="todo">[À COMPLÉTER]</span></p>
+          <h4>4. La toiture</h4>
+          <p><span class="todo">[À COMPLÉTER]</span></p>
+          <h4>5. Plans, coupes et rendus</h4>
+          <p><span class="todo">[À COMPLÉTER : ajoute 2 ou 3 captures avec une légende.]</span></p>
+          <h4>Mes conseils pour débuter</h4>
+          <p><span class="todo">[À COMPLÉTER]</span></p>
+        `
+      },
+      {
+        id: 'ce-quil-y-a-dans-un-mur',
+        titre: 'Construction durable : ce qu\'il y a vraiment dans un mur',
+        date: '2026-10-12',
+        image: { src: '', attendu: 'assets/img/blog/mur-couverture.jpg', legende: 'COUPE DE MUR (BILLET)' },
+        tags: ['construction-durable', 'architecture', 'chantier'],
+        resume: 'Structure, isolant, lame d\'air, bardage : chaque couche d\'un mur a un rôle. Tour d\'horizon.',
+        contenu: `
+          <p><strong>Un mur ne se résume pas à du béton ou à des parpaings. C'est un empilement de couches, et chacune a un rôle : porter, isoler, ventiler, protéger.</strong> Comprendre ces couches, c'est comprendre une grande partie de la construction durable.</p>
+          <h4>La structure : ce qui porte</h4>
+          <p>Béton armé, blocs de béton ou ossature bois : c'est la partie qui reprend le poids du bâtiment. <span class="todo">[À COMPLÉTER]</span></p>
+          <h4>L'isolant : ce qui garde la chaleur</h4>
+          <p>Laine minérale, fibre de bois, ouate de cellulose… Les isolants biosourcés, d'origine végétale ou animale, stockent du carbone. <span class="todo">[À COMPLÉTER]</span></p>
+          <h4>L'ossature secondaire et la lame d'air</h4>
+          <p>Entre l'isolant et le bardage, des tasseaux créent un vide ventilé qui évacue l'humidité. <span class="todo">[À COMPLÉTER]</span></p>
+          <h4>Le bardage : ce qui protège</h4>
+          <p><span class="todo">[À COMPLÉTER]</span></p>
+          <h4>Et la RE2020 dans tout ça ?</h4>
+          <p>Depuis 2022, la réglementation environnementale RE2020 encadre les constructions neuves en France. Elle mesure la consommation d'énergie, mais aussi l'empreinte carbone des matériaux. <span class="todo">[À COMPLÉTER : ce que tu en as vu en cours.]</span></p>
+        `
+      }
+    ];
+
+    const TAGS = ['chantier', 'revit', 'construction-durable', 'bureau-d-etudes', 'architecture'];
+  </script>
+
+  <!-- =========================================================
+       INTERFACE : menu, défilement, projets, blog
+       ========================================================= -->
+  <script>
+  (function () {
+    'use strict';
+    var root = document.documentElement;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches && !root.classList.contains('force-anim');
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+    var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); };
+
+    $('#year').textContent = new Date().getFullYear();
+
+    /* --- Menu burger --- */
+    var nav = $('#nav'), burger = $('.burger');
+    function closeMenu() { nav.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); }
+    burger.addEventListener('click', function () {
+      var open = !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    $$('a', nav).forEach(function (a) { a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+    /* --- Défilement : progression, en-tête, bouton haut, section active, chronologie --- */
+    var bar = $('.progress'), toTop = $('.to-top'), header = $('.site-header'), timeline = $('.timeline');
+    var navLinks = $$('a', nav);
+    var sections = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var ticking = false;
+    function onScroll() {
+      ticking = false;
+      var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+      header.classList.toggle('is-scrolled', y > 8);
+      toTop.classList.toggle('is-visible', y > window.innerHeight * 0.9);
+      var mark = window.innerHeight * 0.35, current = -1;
+      sections.forEach(function (s, i) { if (s.getBoundingClientRect().top <= mark) current = i; });
+      if (y + window.innerHeight >= document.documentElement.scrollHeight - 4) current = sections.length - 1;
+      navLinks.forEach(function (a, i) {
+        var on = i === current;
+        a.classList.toggle('is-active', on);
+        if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      if (timeline) {
+        var r = timeline.getBoundingClientRect();
+        var p = Math.min(1, Math.max(0, (window.innerHeight * 0.6 - r.top) / r.height));
+        timeline.style.setProperty('--p', reduce ? 1 : p.toFixed(4));
+        $$('.tl-item', timeline).forEach(function (li) {
+          li.classList.toggle('is-in', reduce || li.getBoundingClientRect().top + 12 < window.innerHeight * 0.6);
+        });
+      }
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    window.addEventListener('resize', onScroll);
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      $('.brand').focus({ preventScroll: true });
+    });
+
+    /* --- Dévoilement des images de projet (une seule fois) --- */
+    var io = ('IntersectionObserver' in window && !reduce) ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var fig = en.target.querySelector('.proj-fig'); if (fig) fig.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 }) : null;
+    function observe(el) { if (io) io.observe(el); else $$('.proj-fig', el).forEach(function (f) { f.classList.add('is-in'); }); }
+
+    /* --- Image ou emplacement --- */
+    function media(img, opts) {
+      opts = opts || {};
+      if (img && img.src) {
+        return '<img src="' + esc(img.src) + '" alt="' + esc(img.legende || '') + '"' + (opts.eager ? '' : ' loading="lazy"') + ' decoding="async">';
+      }
+      return '<div class="ph" role="img" aria-label="Emplacement : ' + esc(img.legende) + '"><div><strong>' + img.legende + '</strong><small>' + (img.attendu || '') + '</small></div></div>';
+    }
+    function caption(img) { return img.legende + (img.source ? ' · Source : ' + img.source : ''); }
+
+    /* --- Fenêtres --- */
+    var lastFocus = null;
+    function openDialog(d) {
+      lastFocus = document.activeElement;
+      if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+      root.style.overflow = 'hidden';
+      d.scrollTop = 0;
+    }
+    $$('dialog').forEach(function (d) {
+      d.addEventListener('close', function () { root.style.overflow = ''; if (lastFocus) lastFocus.focus({ preventScroll: true }); });
+      d.addEventListener('click', function (e) { if (e.target === d || e.target.closest('[data-close]')) d.close(); });
+    });
+
+    /* --- Projets --- */
+    var list = $('#projects-list');
+    list.innerHTML = PROJETS.map(function (p, i) {
+      var n = p.images.length;
+      return '<article class="projet">' +
+        '<button type="button" class="proj-fig' + (p.images[0].plan ? ' plan' : '') + '" data-project="' + i + '" aria-haspopup="dialog" aria-label="Ouvrir la galerie : ' + esc(p.titre) + '">' + media(p.images[0]) + '</button>' +
+        '<div><p class="proj-meta"><b>' + p.logiciel + '</b> · ' + p.contexte + '</p>' +
+        '<h3>' + p.titre + '</h3><p>' + p.legende + '</p>' +
+        (p.points && p.points.length ? '<ul class="points">' + p.points.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
+        '<button type="button" class="btn-link" data-project="' + i + '" aria-haspopup="dialog">Voir ' + (n > 1 ? 'les ' + n + ' images' : 'l\'image') + '</button></div>' +
+        '</article>';
+    }).join('');
+    $$('.projet', list).forEach(observe);
+
+
+    var dlgP = $('#dlg-project'), bodyP = $('#dlg-project-body'), gIndex = 0, gProject = null;
+    var chevron = function (d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+    function renderGallery() {
+      var imgs = gProject.images, img = imgs[gIndex];
+      $('.gallery-main', bodyP).innerHTML = media(img, { eager: true }) + (imgs.length > 1 ?
+        '<button class="gallery-nav prev" type="button" aria-label="Image précédente">' + chevron('M15 6l-6 6 6 6') + '</button>' +
+        '<button class="gallery-nav next" type="button" aria-label="Image suivante">' + chevron('M9 6l6 6-6 6') + '</button>' : '');
+      $('.gallery-caption', bodyP).textContent = (gIndex + 1) + ' / ' + imgs.length + ' · ' + caption(img);
+      $$('.thumbs button', bodyP).forEach(function (b, i) { b.setAttribute('aria-current', String(i === gIndex)); });
+    }
+    function openProject(i) { openGallery(PROJETS[i], 0); }
+    function openGallery(g, start) {
+      gProject = g; gIndex = start || 0;
+      bodyP.innerHTML =
+        (g.logiciel ? '<p class="dlg-kicker">' + g.logiciel + '</p>' : '') +
+        '<h3 id="dlg-project-title">' + g.titre + '</h3>' +
+        (g.contexte ? '<p class="muted">' + g.contexte + '</p>' : '') + (g.legende ? '<p>' + g.legende + '</p>' : '') +
+        '<figure style="margin:0"><div class="gallery-main"></div><figcaption class="gallery-caption" aria-live="polite"></figcaption></figure>' +
+        (gProject.images.length > 1 ? '<div class="thumbs">' + gProject.images.map(function (img, k) {
+          return '<button type="button" data-thumb="' + k + '" aria-label="Voir l\'image ' + (k + 1) + '">' + media(img) + '</button>';
+        }).join('') + '</div>' : '');
+      renderGallery();
+      openDialog(dlgP);
+    }
+    /* Grilles de photos (data-galerie) */
+    $$('[data-galerie]').forEach(function (box) {
+      var g = GALERIES[box.dataset.galerie];
+      if (!g) return;
+      var planche = box.classList.contains('planche');
+      var max = box.classList.contains('passion-img') ? 3 : g.images.length;
+      box.innerHTML = g.images.slice(0, max).map(function (img, k) {
+        var reste = (k === max - 1 && g.images.length > max) ? '<span class="plus">+' + (g.images.length - max) + '</span>' : '';
+        var pic = '<img src="' + esc(img.src) + '" alt="' + esc(img.legende) + '" loading="lazy" decoding="async">';
+        return planche
+          ? '<button type="button" data-k="' + k + '" aria-haspopup="dialog"><span class="vign' + (img.plan ? ' plan' : '') + '">' + pic + '</span><span class="leg">' + img.legende + '</span></button>'
+          : '<button type="button" data-k="' + k + '" aria-haspopup="dialog" aria-label="Agrandir : ' + esc(img.legende) + (reste ? ' (et ' + (g.images.length - max) + ' autres photos)' : '') + '">' + pic + reste + '</button>';
+      }).join('');
+      box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) openGallery(g, +b.dataset.k); });
+    });
+
+    function moveGallery(d) { var n = gProject.images.length; gIndex = (gIndex + d + n) % n; renderGallery(); }
+    list.addEventListener('click', function (e) { var b = e.target.closest('[data-project]'); if (b) openProject(+b.dataset.project); });
+    bodyP.addEventListener('click', function (e) {
+      if (e.target.closest('.gallery-nav.prev')) moveGallery(-1);
+      else if (e.target.closest('.gallery-nav.next')) moveGallery(1);
+      else { var t = e.target.closest('[data-thumb]'); if (t) { gIndex = +t.dataset.thumb; renderGallery(); } }
+    });
+    dlgP.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') moveGallery(-1);
+      if (e.key === 'ArrowRight') moveGallery(1);
+    });
+
+    /* --- Blog --- */
+    var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+    function fmtDate(iso) { var p = iso.split('-'); return (+p[2]) + ' ' + MOIS[+p[1] - 1] + ' ' + p[0]; }
+    function readingTime(html) { return Math.max(1, Math.round(html.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length / 200)); }
+    function tagsHtml(tags) { return '<div class="hashtags">' + tags.map(function (t) { return '<button type="button" class="hashtag" data-tag="' + t + '">#' + t + '</button>'; }).join('') + '</div>'; }
+    var posts = ARTICLES.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
+    var activeTag = null;
+    var filters = $('#blog-filters'), blogList = $('#blog-list');
+    filters.innerHTML = '<button type="button" class="filter" data-tag="" aria-pressed="true">Tous</button>' +
+      TAGS.map(function (t) { return '<button type="button" class="filter" data-tag="' + t + '" aria-pressed="false">#' + t + '</button>'; }).join('');
+
+    function renderPosts() {
+      var shown = posts.filter(function (p) { return !activeTag || p.tags.indexOf(activeTag) !== -1; });
+      blogList.innerHTML = shown.length ? shown.map(function (p) {
+        return '<article class="post">' +
+          '<p class="post-meta" style="margin:0"><time datetime="' + p.date + '">' + fmtDate(p.date) + '</time><span>' + readingTime(p.contenu) + ' min de lecture</span></p>' +
+          '<div><h3><a href="#blog" data-post="' + p.id + '">' + p.titre + '</a></h3><p class="excerpt">' + p.resume + '</p></div>' +
+          tagsHtml(p.tags) + '</article>';
+      }).join('') : '<p class="empty">Pas encore de billet sur #' + activeTag + '. <button type="button" class="btn-link" data-tag="">Voir tous les billets</button></p>';
+      $$('.filter', filters).forEach(function (b) { b.setAttribute('aria-pressed', String((b.dataset.tag || null) === activeTag)); });
+    }
+    function setTag(t) { activeTag = t || null; renderPosts(); }
+    filters.addEventListener('click', function (e) { var b = e.target.closest('.filter'); if (b) setTag(b.dataset.tag); });
+
+    var dlgA = $('#dlg-article'), bodyA = $('#dlg-article-body');
+    function openPost(id) {
+      var p = ARTICLES.filter(function (a) { return a.id === id; })[0];
+      if (!p) return;
+      bodyA.innerHTML =
+        '<article class="article-body">' +
+        '<p class="post-meta"><time datetime="' + p.date + '">' + fmtDate(p.date) + '</time><span>' + readingTime(p.contenu) + ' min de lecture</span></p>' +
+        '<h3 id="dlg-article-title">' + p.titre + '</h3>' +
+        '<figure><div class="article-hero">' + media(p.image, { eager: true }) + '</div><figcaption class="cap">' + caption(p.image) + '</figcaption></figure>' +
+        p.contenu + tagsHtml(p.tags) + '</article>';
+      openDialog(dlgA);
+    }
+    blogList.addEventListener('click', function (e) {
+      var tag = e.target.closest('[data-tag]');
+      if (tag) { setTag(tag.dataset.tag); return; }
+      var link = e.target.closest('[data-post]');
+      if (link) { e.preventDefault(); openPost(link.dataset.post); }
+    });
+    bodyA.addEventListener('click', function (e) {
+      var tag = e.target.closest('.hashtag');
+      if (tag) { dlgA.close(); setTag(tag.dataset.tag); document.getElementById('blog').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
+    });
+    renderPosts();
+    onScroll();
+  })();
+  </script>
+</body>
+</html>
