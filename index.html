@@ -42,7 +42,9 @@
 
   <script>
     document.documentElement.classList.add('js');
-    if (/[?&]anim=1/.test(location.search)) document.documentElement.classList.add('force-anim');
+    // Animations toujours affichées, même si l'appareil demande de les réduire (choix de Clovis).
+    // Pour revenir au comportement standard : supprimer cette ligne.
+    document.documentElement.classList.add('force-anim');
   </script>
 
   <style>
